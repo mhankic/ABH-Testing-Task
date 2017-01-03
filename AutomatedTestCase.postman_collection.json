@@ -1,0 +1,144 @@
+{
+	"variables": [],
+	"info": {
+		"name": "AutomatedTestCase",
+		"_postman_id": "c7298424-44ce-43bf-1bbf-458da4fbbe6b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://maps.googleapis.com/maps/api/geocode/json?latlng=37.4223632,-122.0843854&sensor=false&key=AIzaSyDvA3Kj9vQazZ3t3lrxtF547hwZmbJM2AQ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"tests[\"Body matches street_number\"] = responseBody.has(\"street_number\"); ",
+							"tests[\"Body matches address components route\"] = responseBody.has(\"route\");",
+							"tests[\"Body matches types\"] = responseBody.has(\"country\");",
+							"tests[\"Body matches short_name type\"] = responseBody.has(\"political\");",
+							"tests[\"Body matches postal_code\"] = responseBody.has(\"postal_code\");",
+							"tests [\"Body matches latitude\"]=responseBody.has (\"lat\");",
+							"tests [\"Body matches longitude\"]=responseBody.has (\"lng\");",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://maps.googleapis.com/maps/api/geocode/json?latlng=37.4223632,-122.0843854&sensor=false&key=AIzaSyDvA3Kj9vQazZ3t3lrxtF547hwZmbJM2AQ",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "AutomatedTestCaseGoogleAPI"
+			},
+			"response": [
+				{
+					"id": "f8bc02a7-c736-43ac-ad63-c78d4359e6cb",
+					"name": "AutomatedTestCaseResponse",
+					"originalRequest": {
+						"url": "https://maps.googleapis.com/maps/api/geocode/xml?address=1600 Amphitheatre Parkway, Mountain View, CA,&sensor=false&key=AIzaSyDvA3Kj9vQazZ3t3lrxtF547hwZmbJM2AQ",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "xml",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "access-control-allow-origin",
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "alt-svc",
+							"key": "alt-svc",
+							"value": "quic=\":443\"; ma=2592000; v=\"35,34\"",
+							"description": "Custom header"
+						},
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "public, max-age=86400",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "content-encoding",
+							"key": "content-encoding",
+							"value": "gzip",
+							"description": "The type of encoding used on the data."
+						},
+						{
+							"name": "content-length",
+							"key": "content-length",
+							"value": "563",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/xml; charset=UTF-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Fri, 30 Dec 2016 19:46:30 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "expires",
+							"key": "expires",
+							"value": "Sat, 31 Dec 2016 19:46:30 GMT",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"name": "server",
+							"key": "server",
+							"value": "mafe",
+							"description": "A name for the server"
+						},
+						{
+							"name": "status",
+							"key": "status",
+							"value": "200",
+							"description": "Custom header"
+						},
+						{
+							"name": "vary",
+							"key": "vary",
+							"value": "Accept-Language",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"name": "x-frame-options",
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "x-xss-protection",
+							"key": "x-xss-protection",
+							"value": "1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 511,
+					"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<GeocodeResponse>\n <status>OK</status>\n <result>\n  <type>street_address</type>\n  <formatted_address>1600 Amphitheatre Pkwy, Mountain View, CA 94043, Sjedinjene Države</formatted_address>\n  <address_component>\n   <long_name>1600</long_name>\n   <short_name>1600</short_name>\n   <type>street_number</type>\n  </address_component>\n  <address_component>\n   <long_name>Amphitheatre Parkway</long_name>\n   <short_name>Amphitheatre Pkwy</short_name>\n   <type>route</type>\n  </address_component>\n  <address_component>\n   <long_name>Mountain View</long_name>\n   <short_name>Mountain View</short_name>\n   <type>locality</type>\n   <type>political</type>\n  </address_component>\n  <address_component>\n   <long_name>Santa Clara County</long_name>\n   <short_name>Santa Clara County</short_name>\n   <type>administrative_area_level_2</type>\n   <type>political</type>\n  </address_component>\n  <address_component>\n   <long_name>California</long_name>\n   <short_name>CA</short_name>\n   <type>administrative_area_level_1</type>\n   <type>political</type>\n  </address_component>\n  <address_component>\n   <long_name>Sjedinjene Države</long_name>\n   <short_name>US</short_name>\n   <type>country</type>\n   <type>political</type>\n  </address_component>\n  <address_component>\n   <long_name>94043</long_name>\n   <short_name>94043</short_name>\n   <type>postal_code</type>\n  </address_component>\n  <geometry>\n   <location>\n    <lat>37.4220303</lat>\n    <lng>-122.0841273</lng>\n   </location>\n   <location_type>ROOFTOP</location_type>\n   <viewport>\n    <southwest>\n     <lat>37.4206813</lat>\n     <lng>-122.0854763</lng>\n    </southwest>\n    <northeast>\n     <lat>37.4233793</lat>\n     <lng>-122.0827783</lng>\n    </northeast>\n   </viewport>\n  </geometry>\n  <place_id>ChIJ2eUgeAK6j4ARbn5u_wAGqWA</place_id>\n </result>\n</GeocodeResponse>\n"
+				}
+			]
+		}
+	]
+}
